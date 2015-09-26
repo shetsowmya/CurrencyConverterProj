@@ -8,7 +8,15 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController <UITextFieldDelegate, UIPickerViewDelegate, NSURLConnectionDataDelegate, NSURLSessionTaskDelegate>
+@property (strong, nonatomic) IBOutlet UITextField *audCurrencyTxtFld;
+@property (strong, nonatomic) IBOutlet UITextField *convertedCurrencyTxtFld;
+
+@property (strong, nonatomic) IBOutlet UIPickerView *currencyPickerView;
+@property (strong, nonatomic) NSArray * currencyArray;
+@property (strong, nonatomic) NSMutableDictionary * currencyDict;
+
+@property (strong, nonatomic) NSURL * fixerIoUrl;
 
 
 @end

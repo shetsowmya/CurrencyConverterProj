@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		038E7F8C1BB6196500101D80 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 038E7F8B1BB6196500101D80 /* QuartzCore.framework */; };
 		03C112811BB5F1770084BDF3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 03C112801BB5F1770084BDF3 /* main.m */; };
 		03C112841BB5F1770084BDF3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 03C112831BB5F1770084BDF3 /* AppDelegate.m */; };
 		03C112871BB5F1770084BDF3 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03C112861BB5F1770084BDF3 /* ViewController.m */; };
@@ -36,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		038E7F8B1BB6196500101D80 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		03C1127C1BB5F1770084BDF3 /* CurrencyConverter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CurrencyConverter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		03C112801BB5F1770084BDF3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		03C112821BB5F1770084BDF3 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -60,6 +62,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				038E7F8C1BB6196500101D80 /* QuartzCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -120,6 +123,7 @@
 		03C1127F1BB5F1770084BDF3 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				038E7F8B1BB6196500101D80 /* QuartzCore.framework */,
 				03C112801BB5F1770084BDF3 /* main.m */,
 			);
 			name = "Supporting Files";
@@ -422,6 +426,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = CurrencyConverter/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				PRODUCT_BUNDLE_IDENTIFIER = ShetCo.CurrencyConverter;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -433,6 +438,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = CurrencyConverter/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				MACOSX_DEPLOYMENT_TARGET = 10.8;
 				PRODUCT_BUNDLE_IDENTIFIER = ShetCo.CurrencyConverter;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
@@ -505,6 +511,7 @@
 				03C112AE1BB5F1770084BDF3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		03C112AF1BB5F1770084BDF3 /* Build configuration list for PBXNativeTarget "CurrencyConverterTests" */ = {
 			isa = XCConfigurationList;
@@ -513,6 +520,7 @@
 				03C112B11BB5F1770084BDF3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		03C112B21BB5F1770084BDF3 /* Build configuration list for PBXNativeTarget "CurrencyConverterUITests" */ = {
 			isa = XCConfigurationList;
@@ -521,6 +529,7 @@
 				03C112B41BB5F1770084BDF3 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
