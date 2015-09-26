@@ -8,6 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		038E7F8C1BB6196500101D80 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 038E7F8B1BB6196500101D80 /* QuartzCore.framework */; };
+		038E7F8E1BB6982400101D80 /* Logo.png in Resources */ = {isa = PBXBuildFile; fileRef = 038E7F8D1BB6982400101D80 /* Logo.png */; settings = {ASSET_TAGS = (); }; };
+		038E7F901BB698CA00101D80 /* Logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 038E7F8F1BB698CA00101D80 /* Logo@2x.png */; settings = {ASSET_TAGS = (); }; };
+		038E7F931BB6994D00101D80 /* Indicator_1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 038E7F911BB6994D00101D80 /* Indicator_1@2x.png */; settings = {ASSET_TAGS = (); }; };
+		038E7F941BB6994D00101D80 /* Indicator_2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 038E7F921BB6994D00101D80 /* Indicator_2@2x.png */; settings = {ASSET_TAGS = (); }; };
 		03C112811BB5F1770084BDF3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 03C112801BB5F1770084BDF3 /* main.m */; };
 		03C112841BB5F1770084BDF3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 03C112831BB5F1770084BDF3 /* AppDelegate.m */; };
 		03C112871BB5F1770084BDF3 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03C112861BB5F1770084BDF3 /* ViewController.m */; };
@@ -38,6 +42,10 @@
 
 /* Begin PBXFileReference section */
 		038E7F8B1BB6196500101D80 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		038E7F8D1BB6982400101D80 /* Logo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Logo.png; sourceTree = "<group>"; };
+		038E7F8F1BB698CA00101D80 /* Logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Logo@2x.png"; sourceTree = "<group>"; };
+		038E7F911BB6994D00101D80 /* Indicator_1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Indicator_1@2x.png"; sourceTree = "<group>"; };
+		038E7F921BB6994D00101D80 /* Indicator_2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Indicator_2@2x.png"; sourceTree = "<group>"; };
 		03C1127C1BB5F1770084BDF3 /* CurrencyConverter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CurrencyConverter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		03C112801BB5F1770084BDF3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		03C112821BB5F1770084BDF3 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -112,8 +120,12 @@
 				03C112861BB5F1770084BDF3 /* ViewController.m */,
 				03C112881BB5F1770084BDF3 /* Main.storyboard */,
 				03C1128E1BB5F1770084BDF3 /* Assets.xcassets */,
+				038E7F8F1BB698CA00101D80 /* Logo@2x.png */,
+				038E7F8D1BB6982400101D80 /* Logo.png */,
 				03C112901BB5F1770084BDF3 /* LaunchScreen.storyboard */,
 				03C112931BB5F1770084BDF3 /* Info.plist */,
+				038E7F911BB6994D00101D80 /* Indicator_1@2x.png */,
+				038E7F921BB6994D00101D80 /* Indicator_2@2x.png */,
 				03C1128B1BB5F1770084BDF3 /* CurrencyConverter.xcdatamodeld */,
 				03C1127F1BB5F1770084BDF3 /* Supporting Files */,
 			);
@@ -253,8 +265,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				038E7F8E1BB6982400101D80 /* Logo.png in Resources */,
+				038E7F901BB698CA00101D80 /* Logo@2x.png in Resources */,
+				038E7F941BB6994D00101D80 /* Indicator_2@2x.png in Resources */,
 				03C112921BB5F1770084BDF3 /* LaunchScreen.storyboard in Resources */,
 				03C1128F1BB5F1770084BDF3 /* Assets.xcassets in Resources */,
+				038E7F931BB6994D00101D80 /* Indicator_1@2x.png in Resources */,
 				03C1128A1BB5F1770084BDF3 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

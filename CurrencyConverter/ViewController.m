@@ -32,15 +32,16 @@
     
     
     
-    CGRect frame = currencyPickerView.frame;
-    frame.size.width = 50;
-    frame.size.height = 216;
-    frame.origin.x=90;
-    frame.origin.y = 200;
-    currencyPickerView.frame = frame;
-    
+//    CGRect frame = currencyPickerView.frame;
+//    frame.size.width = 50;
+//    frame.size.height = 216;
+//    frame.origin.x=90;
+//    frame.origin.y = 200;
+//    currencyPickerView.frame = frame;
+//    
+
     currencyPickerView.showsSelectionIndicator =YES;
-    currencyPickerView.backgroundColor = [UIColor clearColor];
+   // currencyPickerView.backgroundColor = [UIColor clearColor];
     //
     self.currencyPickerView.center = CGPointMake(160,75);
        // Do any additional setup after loading the view, typically from a nib.
@@ -57,8 +58,10 @@
 
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-
-    [audCurrencyTxtFld setText:@"hi"];
+    
+    [currencyPickerView selectRow:2 inComponent:0 animated:YES];
+    [currencyPickerView setBackgroundColor:[UIColor colorWithRed:0 green:102 blue:51 alpha:0.10]];
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -91,6 +94,10 @@
     return YES;
 }
 
+- (void)textFieldDidBeginEditing:(UITextField *)textField {
+    self.audCurrencyTxtFld.text = [[NSLocale currentLocale] objectForKey:NSLocaleCurrencySymbol];
+}
+
 //UIPickerView Delegate
 
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)thePickerView {
@@ -105,7 +112,7 @@
 }
 
 - (UIView *)pickerView:(UIPickerView *)pickerView viewForRow:(NSInteger)row forComponent:(NSInteger)component reusingView:(UIView *)view{
-    CGRect rect = CGRectMake(0, 0, 120, 80);
+    CGRect rect = CGRectMake(0, 0, 200, 150);
     
 
     
@@ -115,25 +122,78 @@
     rotate = CGAffineTransformScale(rotate, 0.25, 2.0);
     [label setTransform:rotate];
     label.text = [currencyArray objectAtIndex:row];
-    label.font = [UIFont systemFontOfSize:56.0];
-    label.numberOfLines =3;
-    label.backgroundColor = [UIColor clearColor];
-    label.clipsToBounds = YES;
     
-    pickerView.layer.borderColor = [UIColor whiteColor].CGColor;
-    pickerView.layer.borderWidth = 2;
+    label.font = [UIFont fontWithName:@"Helvetica" size:56];
+    [label setFont:[UIFont boldSystemFontOfSize:56]];
+
+    label.textAlignment = NSTextAlignmentCenter;
+    label.adjustsFontSizeToFitWidth = YES;
+    label.numberOfLines =3;
+    label.clipsToBounds = YES;
+    [label setTextColor:[UIColor whiteColor]];
+    
+  
+    
+    
+    //creating keyboard of type NumberOnly to input AUD value
+    
+    UIBarButtonItem *doneItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(doneButtonDidPressed:)];
+    UIBarButtonItem *flexableItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:nil action:NULL];
+    UIToolbar *toolbar = [[UIToolbar alloc] initWithFrame:CGRectMake(0, 0, [[UIScreen mainScreen] bounds].size.width, [self toolbarHeight])];
+    
+    [toolbar setItems:[NSArray arrayWithObjects:flexableItem,doneItem, nil]];
+    self.audCurrencyTxtFld.inputAccessoryView = toolbar;
     
     return label ;
 }
+
+
+- (void)doneButtonDidPressed:(id)sender {
+    [self.audCurrencyTxtFld resignFirstResponder];
+}
+
+-(CGFloat)toolbarHeight {
+    // This method will handle the case that the height of toolbar may change in future iOS.
+    return 44.f;
+}
+
+
 - (void)pickerView:(UIPickerView *)thePickerView didSelectRow:(NSInteger)row inComponent:(NSInteger)component {
     
     NSString * selectedCurrency = [currencyArray objectAtIndex: row];
     
-    float convertedCurrencyValue = [self.audCurrencyTxtFld.text floatValue] * [[currencyDict valueForKey:selectedCurrency] floatValue];
-    [self.convertedCurrencyTxtFld setText:[NSString stringWithFormat:@"%f",convertedCurrencyValue]];
+    
+    float convertedCurrencyValue = [[self.audCurrencyTxtFld.text substringFromIndex:1] floatValue] * [[currencyDict valueForKey:selectedCurrency] floatValue];
+    NSNumberFormatter *numberFormatter = [[NSNumberFormatter alloc] init];
+    
+    [numberFormatter setNumberStyle: NSNumberFormatterCurrencyStyle];
+    if ([selectedCurrency isEqualToString:@"CAD"]) {
+        numberFormatter.currencyCode = @"CAD";
+    }else if([selectedCurrency isEqualToString:@"EUR"]){
+        numberFormatter.currencyCode = @"EUR";
+   
+    }else if([selectedCurrency isEqualToString:@"GBP"]){
+        numberFormatter.currencyCode = @"GBP";
+        
+    }else if([selectedCurrency isEqualToString:@"JPY"]){
+        numberFormatter.currencyCode = @"JPY";
+        
+    }else if([selectedCurrency isEqualToString:@"USD"]){
+        numberFormatter.currencyCode = @"USD";
+        
+    }
+    
+    NSString *numberAsString = [numberFormatter stringFromNumber:[NSNumber numberWithFloat:convertedCurrencyValue]];
+
+    
+    [self.convertedCurrencyTxtFld setText:[NSString stringWithFormat:@"%@",numberAsString]];
+
     
 }
 
+- (CGFloat)pickerView:(UIPickerView *)pickerView rowHeightForComponent:(NSInteger)component {
+    return 50;
+}
 
 //nsURLSessionDataDelegate delegate methods
 
@@ -151,6 +211,8 @@
     [currencyDict setObject:[rates objectForKey:@"USD"] forKey:@"USD"];
 
 }
+
+
 
 
 @end

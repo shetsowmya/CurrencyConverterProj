@@ -17,33 +17,46 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="AUD" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jQm-1D-yn6">
-                                <rect key="frame" x="114" y="143" width="133" height="65"/>
+                                <rect key="frame" x="117" y="156" width="133" height="65"/>
                                 <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="56"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="$00.00" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3nk-a2-KLn">
-                                <rect key="frame" x="86" y="236" width="177" height="48"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="$0.00" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="3nk-a2-KLn">
+                                <rect key="frame" x="88" y="229" width="177" height="65"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                                 <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="56"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="----------------" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yyl-DJ-7IY">
-                                <rect key="frame" x="71" y="283" width="244" height="21"/>
+                                <rect key="frame" x="71" y="274" width="244" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4XQ-iF-Grm">
-                                <rect key="frame" x="-126" y="337" width="600" height="92"/>
+                                <rect key="frame" x="57" y="320" width="244" height="170"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" notEnabled="YES"/>
+                                </accessibility>
                             </pickerView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="09z-2P-c71">
-                                <rect key="frame" x="80" y="473" width="183" height="59"/>
-                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="56"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Logo.png" translatesAutoresizingMaskIntoConstraints="NO" id="tpY-ET-K1x">
+                                <rect key="frame" x="57" y="43" width="272" height="26"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Indicator_1.png" translatesAutoresizingMaskIntoConstraints="NO" id="f2B-C1-qj6">
+                                <rect key="frame" x="167" y="366" width="25" height="16"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Indicator_2.png" translatesAutoresizingMaskIntoConstraints="NO" id="p9s-xo-bSF">
+                                <rect key="frame" x="167" y="427" width="25" height="16"/>
+                            </imageView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="09z-2P-c71">
+                                <rect key="frame" x="20" y="484" width="309" height="96"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <fontDescription key="fontDescription" name="Helvetica-Bold" family="Helvetica" pointSize="56"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                         </subviews>
-                        <color key="backgroundColor" red="0.37916698669552767" green="0.95739215349999995" blue="0.59041932938054964" alpha="1" colorSpace="calibratedRGB"/>
+                        <color key="backgroundColor" red="0.16595093692198828" green="0.79068023989898983" blue="0.42122304948003791" alpha="1" colorSpace="calibratedRGB"/>
                     </view>
                     <connections>
                         <outlet property="audCurrencyTxtFld" destination="3nk-a2-KLn" id="tIN-UD-0cU"/>
@@ -56,4 +69,9 @@
             <point key="canvasLocation" x="221" y="327"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Indicator_1.png" width="20" height="14"/>
+        <image name="Indicator_2.png" width="20" height="14"/>
+        <image name="Logo.png" width="191" height="20"/>
+    </resources>
 </document>
