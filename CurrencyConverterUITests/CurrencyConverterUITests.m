@@ -9,13 +9,14 @@
 #import <XCTest/XCTest.h>
 
 @interface CurrencyConverterUITests : XCTestCase
-
+//@property (nonatomic) ViewController *vcToTest;
 @end
 
 @implementation CurrencyConverterUITests
 
 - (void)setUp {
     [super setUp];
+   // self.vcToTest = [[ViewController alloc] init];
     
     // Put setup code here. This method is called before the invocation of each test method in the class.
     
@@ -32,8 +33,13 @@
     [super tearDown];
 }
 
-- (void)testExample {
-    // Use recording to get started writing UI tests.
+- (void)testViewController {
+    
+    //ViewController * viewController = [storyboard instantiateViewControllerWithIdentifier:@"ViewController"];
+    // when
+    
+    // then
+    //XCTAssertEqualObjects(encodedURL, @"/search?q=%24%26%3F%40");    // Use recording to get started writing UI tests.
     // Use XCTAssert and related functions to verify your tests produce the correct results.
 }
 

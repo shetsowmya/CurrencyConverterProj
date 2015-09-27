@@ -7,6 +7,7 @@
 //
 
 #import <XCTest/XCTest.h>
+#import "ViewController.h"
 
 @interface CurrenyConverterTest : XCTestCase
 
@@ -25,6 +26,13 @@
 }
 
 - (void)testExample {
+    
+    ViewController * vcToTest = [[ViewController alloc] init];
+    
+    BOOL result = [vcToTest validateUI];
+    
+    XCTAssertEqual(result, true);
+    
     // This is an example of a functional test case.
     // Use XCTAssert and related functions to verify your tests produce the correct results.
 }

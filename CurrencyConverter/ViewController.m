@@ -8,7 +8,7 @@
 
 #import "ViewController.h"
 
-@interface ViewController ()
+@interface ViewController (Test)
 
 @end
 
@@ -31,7 +31,6 @@
     [self.currencyPickerView setTransform:rotate];
     
     
-    
 //    CGRect frame = currencyPickerView.frame;
 //    frame.size.width = 50;
 //    frame.size.height = 216;
@@ -46,9 +45,7 @@
     self.currencyPickerView.center = CGPointMake(160,75);
        // Do any additional setup after loading the view, typically from a nib.
     
-    
     //return contents from URL
-   
     [self getExchangeRates];
     
 }
@@ -80,7 +77,7 @@
     NSURLSessionDataTask *dataTask = [session dataTaskWithRequest:request
                                                 completionHandler:^(NSData *data, NSURLResponse *response, NSError *error)
                                       {
-                                          [self loadTableViewWithJSONObject:data];
+                                          [self loadPickerViewWithJSONObject:data];
                                       }];
     
     [dataTask resume];
@@ -114,8 +111,6 @@
 - (UIView *)pickerView:(UIPickerView *)pickerView viewForRow:(NSInteger)row forComponent:(NSInteger)component reusingView:(UIView *)view{
     CGRect rect = CGRectMake(0, 0, 200, 150);
     
-
-    
    // UILabel *label = [[UILabel alloc]initWithFrame:rect];
     UILabel *label = [[UILabel alloc]initWithFrame:rect];
     CGAffineTransform rotate = CGAffineTransformMakeRotation(3.14/2);
@@ -133,8 +128,6 @@
     [label setTextColor:[UIColor whiteColor]];
     
   
-    
-    
     //creating keyboard of type NumberOnly to input AUD value
     
     UIBarButtonItem *doneItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemDone target:self action:@selector(doneButtonDidPressed:)];
@@ -162,7 +155,6 @@
     
     NSString * selectedCurrency = [currencyArray objectAtIndex: row];
     
-    
     float convertedCurrencyValue = [[self.audCurrencyTxtFld.text substringFromIndex:1] floatValue] * [[currencyDict valueForKey:selectedCurrency] floatValue];
     NSNumberFormatter *numberFormatter = [[NSNumberFormatter alloc] init];
     
@@ -180,14 +172,9 @@
         
     }else if([selectedCurrency isEqualToString:@"USD"]){
         numberFormatter.currencyCode = @"USD";
-        
     }
-    
     NSString *numberAsString = [numberFormatter stringFromNumber:[NSNumber numberWithFloat:convertedCurrencyValue]];
-
-    
     [self.convertedCurrencyTxtFld setText:[NSString stringWithFormat:@"%@",numberAsString]];
-
     
 }
 
@@ -195,11 +182,8 @@
     return 50;
 }
 
-//nsURLSessionDataDelegate delegate methods
-
-
-
-- (void)loadTableViewWithJSONObject:(NSData *) data
+//parsing through the JSON Object to fill the currency dictionary
+- (void)loadPickerViewWithJSONObject:(NSData *) data
 {
     NSDictionary *alldata =[NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
     
@@ -213,6 +197,24 @@
 }
 
 
+
+//method to be called for the UI to verify that when there is an amount specified in the AUD field, and the user selects a currency, the field at the bottom displays a figure.
+
+-(BOOL)validateUI
+{
+    if (([self.audCurrencyTxtFld.text substringFromIndex:1].length != 0)  && ([self.currencyPickerView selectedRowInComponent:0])){
+        
+        if (self.convertedCurrencyTxtFld.text.length != 0) {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+    }else{
+        return true;
+    }
+}
 
 
 @end

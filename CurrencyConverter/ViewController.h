@@ -18,6 +18,8 @@
 
 @property (strong, nonatomic) NSURL * fixerIoUrl;
 
+-(BOOL)validateUI;
+
 
 @end
 

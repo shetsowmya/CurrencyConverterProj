@@ -9,13 +9,15 @@
 #import <XCTest/XCTest.h>
 
 @interface CurrencyConverterTests : XCTestCase
-
+//@property (nonatomic) ViewController *vcToTest;
 @end
 
 @implementation CurrencyConverterTests
 
 - (void)setUp {
     [super setUp];
+    //self.vcToTest = [[ViewController alloc] init];
+
     // Put setup code here. This method is called before the invocation of each test method in the class.
 }
 
@@ -25,6 +27,10 @@
 }
 
 - (void)testExample {
+//    NSString *reversedString = [self.vcToTest reverseString:originalString];
+//    
+//    NSString *expectedReversedString = @"ydnasiemanymih";
+//    XCTAssertEqualObjects(expectedReversedString, reversedString, @"The reversed string did not match the expected reverse”);
     // This is an example of a functional test case.
     // Use XCTAssert and related functions to verify your tests produce the correct results.
 }
