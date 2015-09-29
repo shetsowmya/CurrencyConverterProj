@@ -51,8 +51,10 @@
 }
 
 -(void)testConvertingCurrency{
-    self.vcToTest.audCurrencyTxtFld.text = @"$4";
-    [self.vcToTest pickerView:self.vcToTest.currencyPickerView didSelectRow:0 inComponent:0];
+    self.vcToTest.audCurrencyTxtFld.text = @"4";
+    NSNumber * convertedCurrencyValue = [self.vcToTest validateUI:self.vcToTest.audCurrencyTxtFld.text forCurrencyCode:@"EUR" ];
+        
+    XCTAssertNotNil(self.vcToTest.convertedCurrencyTxtFld.text, @"Converted currency feild must not be empty");
 }
 
 - (void)testPerformanceExample {

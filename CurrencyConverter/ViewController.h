@@ -19,7 +19,8 @@
 @property (strong, nonatomic) NSURL * fixerIoUrl;
 
 @property (nonatomic) UITextField * audTestFeildForTesting;
--(NSNumber *)validateUI:(NSNumber *)audValue forCurrencyCode:(NSString *)selectedCurrencyCode;
+-(NSNumber *)validateUI:(NSString *)audValue forCurrencyCode:(NSString *)selectedCurrencyCode;
+-(NSNumber *) calculateConvertedCurrencyValueForCurrencyCode:(NSString *)selectedCurrency;
 
 
 @end

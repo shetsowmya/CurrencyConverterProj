@@ -254,12 +254,13 @@
 
 //method to be called for the UI to verify that when there is an amount specified in the AUD field, and the user selects a currency, the field at the bottom displays a figure.
 
--(NSNumber *)validateUI:(NSNumber *)audValue forCurrencyCode:(NSString *)selectedCurrencyCode
+-(NSNumber *)validateUI:(NSString *)audValue forCurrencyCode:(NSString *)selectedCurrencyCode
 {
-    self.audCurrencyTxtFld.text = [audValue stringValue];
+    self.audCurrencyTxtFld.text = audValue;
     NSNumber * convertedCurrencyValue = [self calculateConvertedCurrencyValueForCurrencyCode:selectedCurrencyCode];
     
-
+    self.convertedCurrencyTxtFld.text = [convertedCurrencyValue stringValue];
+    
     return convertedCurrencyValue;
 }
 
