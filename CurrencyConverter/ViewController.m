@@ -30,6 +30,8 @@
     rotate = CGAffineTransformScale(rotate, 0.25, 2.0);
     [self.currencyPickerView setTransform:rotate];
     
+    UITapGestureRecognizer * myGR = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(pickerTapped:)];
+    [self.currencyPickerView addGestureRecognizer:myGR];
     
 //    CGRect frame = currencyPickerView.frame;
 //    frame.size.width = 50;
@@ -184,7 +186,7 @@
         numberFormatter.currencyCode = @"CAD";
     }else if([selectedCurrency isEqualToString:@"EUR"]){
         numberFormatter.currencyCode = @"EUR";
-   
+        
     }else if([selectedCurrency isEqualToString:@"GBP"]){
         numberFormatter.currencyCode = @"GBP";
         
@@ -198,6 +200,24 @@
     [self.convertedCurrencyTxtFld setText:[NSString stringWithFormat:@"%@",numberAsString]];
     
 }
+
+
+-(NSNumber *) calculateConvertedCurrencyValueForCurrencyCode:(NSString *)selectedCurrency
+{
+
+    NSMutableDictionary * tempDict = [[NSMutableDictionary alloc]init];
+    [tempDict setObject:@"0.93449" forKey:@"CAD"];
+    [tempDict setObject:@"0.62629" forKey:@"EUR"];
+    [tempDict setObject:@"0.46045" forKey:@"GBP"];
+    [tempDict setObject:@"84.005" forKey:@"JPY"];
+    [tempDict setObject:@"0.69957" forKey:@"USD"];
+    
+    float convertedCurrencyValue = [self.audCurrencyTxtFld.text floatValue] * [[tempDict valueForKey:selectedCurrency] floatValue];    
+   
+    return [NSNumber numberWithFloat:convertedCurrencyValue];
+
+}
+
 
 - (CGFloat)pickerView:(UIPickerView *)pickerView rowHeightForComponent:(NSInteger)component {
     return 50;
@@ -219,22 +239,28 @@
 
 
 
+// target method
+
+-(void)pickerTapped:(id)sender
+{
+    CGFloat rowHeight = [self.currencyPickerView rowSizeForComponent:0].height;
+    CGRect selectedRowFrame = CGRectInset(self.currencyPickerView.bounds, 0.0, (CGRectGetHeight(self.currencyPickerView.frame) - rowHeight) / 2.0 );
+    BOOL userTappedOnSelectedRow = (CGRectContainsPoint(selectedRowFrame, [sender locationInView:self.currencyPickerView]));
+    if (userTappedOnSelectedRow) {
+        NSInteger selectedRow = [self.currencyPickerView selectedRowInComponent:0];
+        [self pickerView:self.currencyPickerView didSelectRow:selectedRow inComponent:0];
+    }
+}
+
 //method to be called for the UI to verify that when there is an amount specified in the AUD field, and the user selects a currency, the field at the bottom displays a figure.
 
--(BOOL)validateUI
+-(NSNumber *)validateUI:(NSNumber *)audValue forCurrencyCode:(NSString *)selectedCurrencyCode
 {
-    if (([self.audCurrencyTxtFld.text substringFromIndex:1].length != 0)  && ([self.currencyPickerView selectedRowInComponent:0])){
-        
-        if (self.convertedCurrencyTxtFld.text.length != 0) {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
-    }else{
-        return true;
-    }
+    self.audCurrencyTxtFld.text = [audValue stringValue];
+    NSNumber * convertedCurrencyValue = [self calculateConvertedCurrencyValueForCurrencyCode:selectedCurrencyCode];
+    
+
+    return convertedCurrencyValue;
 }
 
 

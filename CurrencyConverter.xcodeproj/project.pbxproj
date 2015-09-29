@@ -21,7 +21,6 @@
 		03C1128F1BB5F1770084BDF3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 03C1128E1BB5F1770084BDF3 /* Assets.xcassets */; };
 		03C112921BB5F1770084BDF3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 03C112901BB5F1770084BDF3 /* LaunchScreen.storyboard */; };
 		03C1129D1BB5F1770084BDF3 /* CurrencyConverterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 03C1129C1BB5F1770084BDF3 /* CurrencyConverterTests.m */; };
-		03C112A81BB5F1770084BDF3 /* CurrencyConverterUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 03C112A71BB5F1770084BDF3 /* CurrencyConverterUITests.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,7 +62,6 @@
 		03C1129C1BB5F1770084BDF3 /* CurrencyConverterTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CurrencyConverterTests.m; sourceTree = "<group>"; };
 		03C1129E1BB5F1770084BDF3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		03C112A31BB5F1770084BDF3 /* CurrencyConverterUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CurrencyConverterUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		03C112A71BB5F1770084BDF3 /* CurrencyConverterUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CurrencyConverterUITests.m; sourceTree = "<group>"; };
 		03C112A91BB5F1770084BDF3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -156,7 +154,6 @@
 		03C112A61BB5F1770084BDF3 /* CurrencyConverterUITests */ = {
 			isa = PBXGroup;
 			children = (
-				03C112A71BB5F1770084BDF3 /* CurrencyConverterUITests.m */,
 				03C112A91BB5F1770084BDF3 /* Info.plist */,
 			);
 			path = CurrencyConverterUITests;
@@ -319,7 +316,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				03C112A81BB5F1770084BDF3 /* CurrencyConverterUITests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

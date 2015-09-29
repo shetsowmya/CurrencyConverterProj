@@ -18,7 +18,8 @@
 
 @property (strong, nonatomic) NSURL * fixerIoUrl;
 
--(BOOL)validateUI;
+@property (nonatomic) UITextField * audTestFeildForTesting;
+-(NSNumber *)validateUI:(NSNumber *)audValue forCurrencyCode:(NSString *)selectedCurrencyCode;
 
 
 @end
