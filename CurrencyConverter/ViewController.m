@@ -93,8 +93,29 @@
 
 - (void)textFieldDidBeginEditing:(UITextField *)textField {
     self.audCurrencyTxtFld.text = [[NSLocale currentLocale] objectForKey:NSLocaleCurrencySymbol];
+    if ((textField == self.audCurrencyTxtFld) && (textField.text.length !=0)) {
+        if ([self.audCurrencyTxtFld.text substringFromIndex:1].length != 0 ) {
+            self.currencyPickerView.userInteractionEnabled = YES;
+        }
+        else{
+            self.currencyPickerView.userInteractionEnabled = NO;
+            self.convertedCurrencyTxtFld.text = @"";
+        }
+    }
 }
 
+
+-(void)textFieldDidEndEditing:(UITextField *)textField{
+    if ((textField == self.audCurrencyTxtFld) && (textField.text.length !=0)) {
+        if ([self.audCurrencyTxtFld.text substringFromIndex:1].length != 0 ) {
+            self.currencyPickerView.userInteractionEnabled = YES;
+        }
+        else{
+            self.currencyPickerView.userInteractionEnabled = NO;
+            self.convertedCurrencyTxtFld.text = @"";
+        }
+    }
+}
 //UIPickerView Delegate
 
 - (NSInteger)numberOfComponentsInPickerView:(UIPickerView *)thePickerView {

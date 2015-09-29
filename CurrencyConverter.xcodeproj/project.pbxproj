@@ -12,7 +12,7 @@
 		038E7F901BB698CA00101D80 /* Logo@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 038E7F8F1BB698CA00101D80 /* Logo@2x.png */; settings = {ASSET_TAGS = (); }; };
 		038E7F931BB6994D00101D80 /* Indicator_1@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 038E7F911BB6994D00101D80 /* Indicator_1@2x.png */; settings = {ASSET_TAGS = (); }; };
 		038E7F941BB6994D00101D80 /* Indicator_2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 038E7F921BB6994D00101D80 /* Indicator_2@2x.png */; settings = {ASSET_TAGS = (); }; };
-		038E7F971BB774EF00101D80 /* CurrenyConverterTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 038E7F961BB774EF00101D80 /* CurrenyConverterTest.m */; settings = {ASSET_TAGS = (); }; };
+		038E7F991BBA0E6C00101D80 /* CurrencyConverterTest.m in Sources */ = {isa = PBXBuildFile; fileRef = 038E7F981BBA0E6C00101D80 /* CurrencyConverterTest.m */; settings = {ASSET_TAGS = (); }; };
 		03C112811BB5F1770084BDF3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 03C112801BB5F1770084BDF3 /* main.m */; };
 		03C112841BB5F1770084BDF3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 03C112831BB5F1770084BDF3 /* AppDelegate.m */; };
 		03C112871BB5F1770084BDF3 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 03C112861BB5F1770084BDF3 /* ViewController.m */; };
@@ -47,7 +47,7 @@
 		038E7F8F1BB698CA00101D80 /* Logo@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Logo@2x.png"; sourceTree = "<group>"; };
 		038E7F911BB6994D00101D80 /* Indicator_1@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Indicator_1@2x.png"; sourceTree = "<group>"; };
 		038E7F921BB6994D00101D80 /* Indicator_2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Indicator_2@2x.png"; sourceTree = "<group>"; };
-		038E7F961BB774EF00101D80 /* CurrenyConverterTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CurrenyConverterTest.m; sourceTree = "<group>"; };
+		038E7F981BBA0E6C00101D80 /* CurrencyConverterTest.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CurrencyConverterTest.m; path = CurrencyConverterTests/CurrencyConverterTest.m; sourceTree = SOURCE_ROOT; };
 		03C1127C1BB5F1770084BDF3 /* CurrencyConverter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CurrencyConverter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		03C112801BB5F1770084BDF3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		03C112821BB5F1770084BDF3 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -146,9 +146,9 @@
 		03C1129B1BB5F1770084BDF3 /* CurrencyConverterTests */ = {
 			isa = PBXGroup;
 			children = (
+				038E7F981BBA0E6C00101D80 /* CurrencyConverterTest.m */,
 				03C1129C1BB5F1770084BDF3 /* CurrencyConverterTests.m */,
 				03C1129E1BB5F1770084BDF3 /* Info.plist */,
-				038E7F961BB774EF00101D80 /* CurrenyConverterTest.m */,
 			);
 			path = CurrencyConverterTests;
 			sourceTree = "<group>";
@@ -311,7 +311,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				03C1129D1BB5F1770084BDF3 /* CurrencyConverterTests.m in Sources */,
-				038E7F971BB774EF00101D80 /* CurrenyConverterTest.m in Sources */,
+				038E7F991BBA0E6C00101D80 /* CurrencyConverterTest.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
